@@ -1,0 +1,38 @@
+.name {
+    width: 210px;
+    font-size: larger;
+    font-weight: lighter;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: #0080ff;
+}
+
+.nameId {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nameId > div {
+    font-size: xx-small;
+    color: #888;
+}
+
+.like {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+    font-size: smaller;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.like:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(255, 107, 107, 0.4);
+}

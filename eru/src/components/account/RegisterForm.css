@@ -1,0 +1,197 @@
+.register-form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.register-form-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.register-form-container fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.register-form-container .form-group {
+  margin-bottom: 16px;
+}
+
+.register-form-container .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.register-form-container .form-group input[type="text"],
+.register-form-container .form-group input[type="password"],
+.register-form-container .form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.register-form-container .form-group input:focus,
+.register-form-container .form-group select:focus {
+  outline: none;
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+.register-form-container .form-group .error {
+  display: block;
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.register-form-container .valid-input {
+  display: flex;
+  gap: 8px;
+}
+
+.register-form-container .valid-input input {
+  flex: 1;
+}
+
+.register-form-container .send-code-btn {
+  padding: 8px 16px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.register-form-container .send-code-btn:disabled {
+  background-color: #d9d9d9;
+  cursor: not-allowed;
+}
+
+.register-form-container .password-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.register-form-container .password-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.register-form-container .password-switch {
+  position: relative;
+  width: 44px;
+  height: 22px;
+  background-color: #ccc;
+  border-radius: 11px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-form-container .password-switch.active {
+  background-color: #1890ff;
+}
+
+.register-form-container .password-switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.register-form-container .password-switch.active::after {
+  transform: translateX(22px);
+}
+
+.register-form-container .hobby-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.register-form-container .hobby-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.register-form-container .hobby-checkbox input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.register-form-container .hobby-checkbox:has(input:checked) {
+  background-color: #e6f7ff;
+  border-color: #1890ff;
+}
+
+.register-form-container .adult-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.register-form-container .adult-status input[type="checkbox"] {
+  width: auto;
+}
+
+.register-form-container .submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  background-color: #1890ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-form-container .submit-btn:hover {
+  background-color: #40a9ff;
+}
+
+.register-form-container .submit-btn:disabled {
+  background-color: #d9d9d9;
+  cursor: not-allowed;
+}
+
+.register-form-container .login-link {
+  text-align: center;
+  margin-top: 16px;
+  color: #666;
+  font-size: 14px;
+}
+
+.register-form-container .login-link a {
+  color: #1890ff;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.register-form-container .login-link a:hover {
+  text-decoration: underline;
+}

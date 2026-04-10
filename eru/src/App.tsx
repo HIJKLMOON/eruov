@@ -1,65 +1,30 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  NavLink,
-  Outlet,
-} from "react-router-dom";
-import Counter from "./pages/Counter";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Counter from "./pages/counter/Counter";
 import "./App.css";
-import Api from "./pages/Api";
-import StorageManager from "./pages/StorageManager";
-import Test from "./pages/Test";
+import Api from "./pages/api/Api";
+import StorageManager from "./pages/storage/StorageManager";
+import Test from "./pages/test/Test";
+import Main from "./pages/main/Main";
+import Layout from "./pages/Layout";
+import Profile from "./pages/account/Profile";
+import Login from "./pages/account/Login";
+import Register from "./pages/account/Register";
 
 const App = () => {
-  // const
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="layout">
-              <aside className="sidebar">
-                <h2>导航</h2>
-                <nav>
-                  <NavLink
-                    to="/"
-                    className={({ isActive }) => (isActive ? "active" : "")}
-                  >
-                    计数器
-                  </NavLink>
-                  <NavLink
-                    to="/api"
-                    className={({ isActive }) => (isActive ? "active" : "")}
-                  >
-                    API 请求
-                  </NavLink>
-                  <NavLink
-                    to="/storage"
-                    className={({ isActive }) => (isActive ? "active" : "")}
-                  >
-                    LocalStorage
-                  </NavLink>
-                  <NavLink
-                    to="/test"
-                    className={({ isActive }) => (isActive ? "active" : "")}
-                  >
-                    测试
-                  </NavLink>
-                </nav>
-              </aside>
-              <main className="content">
-                <Outlet />
-              </main>
-            </div>
-          }
-        >
-          <Route index element={<Counter />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path="counter" element={<Counter />} />
           <Route path="api" element={<Api />} />
           <Route path="storage" element={<StorageManager />} />
           <Route path="test" element={<Test />} />
-          <Route path="*" element={<Test />} />
+          <Route path="account" element={<Profile />}>
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+          </Route>
+          <Route path="*" element={<Main />} />
         </Route>
       </Routes>
     </BrowserRouter>
