@@ -25,9 +25,9 @@ class Base(DeclarativeBase):
     is_delete: Mapped[bool] = mapped_column(
         Boolean, default=False, comment="软删除标记", sort_order=999
     )
+
     # __table_args__ = {
     #     "mysql_engine": "InnoDB",  # 存储引擎
     #     "mysql_charset": "utf8mb4",  # 字符集
     #     "mysql_collate": "utf8mb4_unicode_ci",
     # }
-    pass

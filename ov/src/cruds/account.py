@@ -23,7 +23,7 @@ async def register_account(
     if get_id_by_phone(register.phone, session):
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="手机号已注册")
     hashed_password = (
-        await hash_password(register.password_hash) if register.password_hash else None
+        await hash_password(register.hashed_password) if register.hashed_password else None
     )
     account = Account(
         phone=register.phone,
@@ -40,7 +40,7 @@ async def login_account(login: account_shcemas.login_data, session: AsyncSession
         raise HTTPException(
             status_code=status.HTTP_411_LENGTH_REQUIRED, detail="账号未注册"
         )
-    if login.use_password and login.password_hash:
+    if login.use_password and login.hashed_password:
         stmt = select(Account.password_hash).where(Account.id == account_id)
         result = await session.execute(stmt)
         value = result.one_or_none()
@@ -48,7 +48,7 @@ async def login_account(login: account_shcemas.login_data, session: AsyncSession
             raise HTTPException(
                 status_code=status.HTTP_409_CONFLICT, detail="未设置密码"
             )
-        verify_value = await verify_password(login.password_hash, value[0])
+        verify_value = await verify_password(login.hashed_password, value[0])
         if verify_value:
             stmt = (
                 update(Account)

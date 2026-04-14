@@ -25,6 +25,7 @@ class Account(Base):
         comment="已登录设备列表",
         sort_order=996,
     )
+
     # current_devices_msg 示例：
     # {
     #   'device_id': {
